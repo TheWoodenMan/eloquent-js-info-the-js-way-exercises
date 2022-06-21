@@ -1,3 +1,41 @@
+// https://javascript.info/variables
+
+// Working with variables
+// importance: 2
+// Declare two variables: admin and name.
+// Assign the value "John" to name.
+// Copy the value from name to admin.
+// let admin;
+// let name = "John";
+// admin = name;
+
+// alert(admin);
+// Show the value of admin using alert (must output “John”).
+// solution
+// Giving the right name
+// importance: 3
+// Create a variable with the name of our planet. How would you name such a variable?
+
+// const homePlanet = "earth";
+// Create a variable to store the name of a current visitor to a website. How would you name that variable?
+
+// let currentVisitor = "John Doe";
+// solution
+// Uppercase const?
+// importance: 4
+// Examine the following code:
+
+// const birthday = '18.04.1982';
+
+// const age = someCode(birthday);
+// Here we have a constant birthday date and the age is calculated from birthday with the help of some code (it is not provided for shortness, and because details don’t matter here).
+
+// Would it be right to use upper case for birthday? For age? Or even for both?
+
+// const BIRTHDAY = '18.04.1982'; // make uppercase? It's a constant determined outside of the code - so you could use all uppercase.
+
+// const AGE = someCode(BIRTHDAY); // make uppercase? it's a value that will chance over time so it's better to write age in lowercase.
+
 // https://javascript.info/function-basics
 
 // Is "else" required?
@@ -92,13 +130,13 @@
 
 // Create a web-page that prompts for x and n, and then shows the result of pow(x,n).
 
-function webPrompt() {
-  let n = prompt("What is the target number?");
-  let x = prompt("To what power do you want to raise it to?");
+// function webPrompt() {
+//   let n = prompt("What is the target number?");
+//   let x = prompt("To what power do you want to raise it to?");
 
-  let powerOutput = n ** x;
-  alert(`${n} to the power of ${x} is ${powerOutput}`);
-}
+//   let powerOutput = n ** x;
+//   alert(`${n} to the power of ${x} is ${powerOutput}`);
+// }
 
 // Run the demo
 
