@@ -280,3 +280,123 @@
 //     }
 //   }
 // }
+
+// TODO: create the character object here
+
+const aurora = {
+  name: "Aurora",
+  health: 150,
+  strength: 25,
+  xp: 0,
+
+  // Return the character description
+  describe() {
+    return `${this.name} has ${this.health} health points and ${
+      this.strength
+    } as strength. She has ${this.xp} experience points and needs ${
+      1000 - this.xp
+    } to next level.`;
+  },
+};
+
+// Aurora is harmed by an arrow
+aurora.health -= 20;
+
+// Aurora equips a strength necklace
+aurora.strength += 10;
+
+// Aurora learn a new skill
+aurora.xp += 15;
+
+console.log(aurora.describe());
+
+// TODO: create the dog object here
+
+const dog = {
+  name: "Hokku",
+  species: "Shibe",
+  size: "1' 3\"",
+  bark() {
+    return "Woof! OwO";
+  },
+};
+
+console.log(`${dog.name} is a ${dog.species} dog measuring ${dog.size}`);
+console.log(`Look, a cat! ${dog.name} barks: ${dog.bark()}`);
+
+// const circleRadius = function () {
+//   return Number(prompt("Enter the circle radius:"));
+// };
+
+// const circle = {
+//   r: 1,
+//   getCircumference(r) {
+//     return 2 * Math.PI * r;
+//   },
+//   circumference: 1,
+//   getArea(r) {
+//     return Math.PI * r ** 2;
+//   },
+//   area: 1,
+// };
+
+// function configureCircle() {
+//   r = circleRadius();
+//   circle.circumference = circle.getCircumference(r);
+//   circle.area = circle.getArea(r);
+// }
+// configureCircle();
+
+// TODO: create the circle object here
+// const r = Number(prompt("Enter the circle radius:"));
+// // const areaCalc = Math.PI * r ** 2;
+// // const circumferenceCalc = 2 * Math.PI * r;
+
+// const circle = {
+//   area() {
+//     return Math.PI * r ** 2;
+//   },
+//   circumference() {
+//     return 2 * Math.PI * r;
+//   },
+// };
+
+// // TODO: create the circle object here
+
+// console.log(`Its circumference is ${circle.circumference()}`);
+// console.log(`Its area is ${circle.area()}`);
+
+// Modeling a bank account
+// Write a program that creates an account object with the following characteristics:
+
+// A name property set to "Alex".
+// A balance property set to 0.
+// A credit method adding the (positive or negative) value passed as an argument to the account balance.
+// A describe method returning the account description.
+// Use this object to show its description, crediting 250, debiting 80, then show its description again.
+
+// const bank = {
+//   name: "Alex",
+//   balance: 0,
+//   credit(num) {
+//     if (num > 0) {
+//       this.balance += Number(num);
+//     } else if (num < 0) {
+//       this.balance -= Number(num);
+//     }
+//   },
+//   describe() {
+//     return `${bank.name}'s account has ${bank.balance} pounds in it.`;
+//   },
+// };
+
+// console.log(bank.describe());
+// bank.credit(250);
+// bank.credit(-80);
+// console.log(bank.describe());
+
+
+modules/jb2a_patreon/Library/2nd_Level/Scorching_Ray/ScorchingRay_01_Regular_Red_30ft_1600x400.webm,
+modules/jb2a_patreon/Library/Generic/Impact/Impact_11_Dark_Red_400x400.webm,
+modules/gAudioBundle-2/src/Ice/Ice%20Block/Burn_Ice_001.ogg,
+modules/gAudioBundle-2/src/Electric%20Magnetic/Tone_Sound_Design_Electric_Spark_Gritty_Thin_Crackle_Dense_Steady.ogg,,,
