@@ -532,75 +532,77 @@ let list = {
 
 // // Your code here.
 
-function arrayToList(arr) {
-  let outputArray = [];
-  let endArray = ["null"];
-  for (let i = 0; i < arr.length; i++) {
-    outputArray.push(`{value: ${arr[i]}, rest: `);
-    endArray.push(`}`);
-  }
-  return outputArray.join("") + endArray.join("");
-}
+// function arrayToList(arr) {
+//   let outputArray = [];
+//   let endArray = ["null"];
+//   for (let i = 0; i < arr.length; i++) {
+//     outputArray.push(`{value: ${arr[i]}, rest: `);
+//     endArray.push(`}`);
+//   }
+//   return outputArray.join("") + endArray.join("");
+// }
 
-function listToArray(list) {
-  return;
-}
+// function listToArray(list) {
+//   return;
+// }
 
-function prepend(element, list) {
-  return;
-}
+// function prepend(element, list) {
+//   return;
+// }
 
-function nth(list, num) {
-  return;
-}
+// function nth(list, num) {
+//   return;
+// }
 
-console.log(arrayToList([10, 20]));
-// // → {value: 10, rest: {value: 20, rest: null}}
+// console.log(arrayToList([10, 20]));
+// // // → {value: 10, rest: {value: 20, rest: null}}
 
-let testArray = arrayToList([10, 20, 30]);
-console.log(list.keys);
+// let testArray = arrayToList([10, 20, 30]);
+// console.log(list.keys);
 
-console.log(listToArray(arrayToList([10, 20, 30])));
-// // → [10, 20, 30]
-// console.log(prepend(10, prepend(20, null)));
-// // → {value: 10, rest: {value: 20, rest: null}}
-// console.log(nth(arrayToList([10, 20, 30]), 1));
-// // → 20
+// console.log(listToArray(arrayToList([10, 20, 30])));
+// // // → [10, 20, 30]
+// // console.log(prepend(10, prepend(20, null)));
+// // // → {value: 10, rest: {value: 20, rest: null}}
+// // console.log(nth(arrayToList([10, 20, 30]), 1));
+// // // → 20
 
-// Deep comparison
-// The == operator compares objects by identity. But sometimes you’d prefer to compare the values of their actual properties.
+// // Deep comparison
+// // The == operator compares objects by identity. But sometimes you’d prefer to compare the values of their actual properties.
 
-// Write a function deepEqual that takes two values and returns true only if they are the same value or are objects with the same properties,
-// where the values of the properties are equal when compared with a recursive call to deepEqual.
+// // Write a function deepEqual that takes two values and returns true only if they are the same value or are objects with the same properties,
+// // where the values of the properties are equal when compared with a recursive call to deepEqual.
 
-// To find out whether values should be compared directly (use the === operator for that) or have their properties compared,
-// you can use the typeof operator. If it produces "object" for both values, you should do a deep comparison.
-// But you have to take one silly exception into account: because of a historical accident, typeof null also produces "object".
+// // To find out whether values should be compared directly (use the === operator for that) or have their properties compared,
+// // you can use the typeof operator. If it produces "object" for both values, you should do a deep comparison.
+// // But you have to take one silly exception into account: because of a historical accident, typeof null also produces "object".
 
-// The Object.keys function will be useful when you need to go over the properties of objects to compare them.
+// // The Object.keys function will be useful when you need to go over the properties of objects to compare them.
 
-// // Your code here.
+// // // Your code here.
 
-function deepEqual(value1, value2) {
-  console.log(typeof value1);
-  console.log(typeof value2);
-  if (value1 === null || value2 === null) {
-    return false;
-  } else if (value1 === value2) {
-    return true;
-  } else if (value1 !== value2) {
-    return false;
-  } else if (typeof value1 === "object" && typeof value2 === "object") {
-    return deepEqual(Object.keys(value1), Object.keys(value2));
-  } else {
-    return false;
-  }
-}
+// function deepEqual(value1, value2) {
+//   console.log(typeof value1);
+//   console.log(typeof value2);
+//   if (value1 === null || value2 === null) {
+//     return false;
+//   } else if (value1 === value2) {
+//     return true;
+//   } else if (value1 !== value2) {
+//     return false;
+//   } else if (typeof value1 === "object" && typeof value2 === "object") {
+//     return deepEqual(Object.keys(value1), Object.keys(value2));
+//   } else {
+//     return false;
+//   }
+// }
 
-let obj = { here: { is: "an" }, object: 2 };
-console.log(deepEqual(obj, obj));
-// // → true
-console.log(deepEqual(obj, { here: 1, object: 2 }));
-// // → false
-console.log(deepEqual(obj, { here: { is: "an" }, object: 2 }));
-// // → true
+// let obj = { here: { is: "an" }, object: 2 };
+// console.log(deepEqual(obj, obj));
+// // // → true
+// console.log(deepEqual(obj, { here: 1, object: 2 }));
+// // // → false
+// console.log(deepEqual(obj, { here: { is: "an" }, object: 2 }));
+// // // → true
+
+
