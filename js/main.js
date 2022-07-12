@@ -750,6 +750,21 @@
 // First, implement the method calculate(str) that takes a string like "1 + 2" in the format “NUMBER operator NUMBER”
 // (space-delimited) and returns the result. Should understand plus + and minus -.
 
+// function Calculator() {
+//   this.addMethod(op, func) {
+//     this.title = func(a, b) {}
+//   }
+// }
+
+// function calculate(str) {
+//   let splitArray = str.split(" ");
+//   return (
+//     parseInt(splitArray[0]) + parseInt(splitArray[1].concat(splitArray[2]))
+//   );
+// }
+
+// console.log(calculate("1 - 2"));
+
 // Usage example:
 
 // let calc = new Calculator;
@@ -783,9 +798,16 @@
 // let pete = { name: "Pete", age: 30 };
 // let mary = { name: "Mary", age: 28 };
 
-// let users = [ john, pete, mary ];
+// let users = [john, pete, mary];
 
-// let names = /* ... your code */
+// let names = function (objArray) {
+//   for (let i = 0; i < objArray.length; i++) {
+//     objArray[i] = objArray[i].name;
+//   }
+// };
+
+// names(users);
+// console.log(users);
 
 // alert( names ); // John, Pete, Mary
 // solution
@@ -793,7 +815,8 @@
 // importance: 5
 // You have an array of user objects, each one has name, surname and id.
 
-// Write the code to create another array from it, of objects with id and fullName, where fullName is generated from name and surname.
+// Write the code to create another array from it, of objects with id and fullName,
+// where fullName is generated from name and surname.
 
 // For instance:
 
@@ -801,9 +824,19 @@
 // let pete = { name: "Pete", surname: "Hunt", id: 2 };
 // let mary = { name: "Mary", surname: "Key", id: 3 };
 
-// let users = [ john, pete, mary ];
+// let users = [john, pete, mary];
 
-// let usersMapped = /* ... your code ... */
+// let usersMapped = function (mapArray) {
+//   for (let i = 0; i < mapArray.length; i++) {
+//     mapArray[i].fullName =
+//       `${mapArray[i].name}` + " " + `${mapArray[i].surname}`;
+//     delete mapArray[i].name;
+//     delete mapArray[i].surname;
+//   }
+// };
+// console.log(users);
+// usersMapped(users);
+// console.log(users);
 
 // /*
 // usersMapped = [
@@ -828,15 +861,21 @@
 // let pete = { name: "Pete", age: 30 };
 // let mary = { name: "Mary", age: 28 };
 
-// let arr = [ pete, john, mary ];
+// let arr = [pete, john, mary];
+
+// function sortByAge(arr) {
+//   arr.sort((a, b) => a.age - b.age);
+// }
 
 // sortByAge(arr);
+// console.log(arr);
 
 // // now: [john, mary, pete]
 // alert(arr[0].name); // John
 // alert(arr[1].name); // Mary
 // alert(arr[2].name); // Pete
 // solution
+
 // Shuffle an array
 // importance: 3
 // Write the function shuffle(array) that shuffles (randomly reorders) elements of the array.
@@ -844,8 +883,23 @@
 // Multiple runs of shuffle may lead to different orders of elements. For instance:
 
 // let arr = [1, 2, 3];
+// console.log(arr);
 
-// shuffle(arr);
+// function fisherYatesShuffle(arr) {
+//   let orderSort;
+//   let tempVar;
+//   for (let i = 0; i < arr.length; i++) {
+//     // randomise a number between i and arr.length - 1;
+//     orderSort = Math.floor(Math.random() * (arr.length - i) + i);
+//     tempVar = arr[orderSort];
+//     arr[orderSort] = arr[i];
+//     arr[i] = tempVar;
+//   }
+// }
+
+// fisherYatesShuffle(arr);
+// console.log(arr);
+
 // // arr = [3, 2, 1]
 
 // shuffle(arr);
@@ -869,10 +923,27 @@
 // let pete = { name: "Pete", age: 30 };
 // let mary = { name: "Mary", age: 29 };
 
-// let arr = [ john, pete, mary ];
+// let arr = [john, pete, mary];
+
+// function getAverageAge(users) {
+//   let userNumbers = parseInt(users.length);
+//   let subTotal = 0;
+//   for (let i = 0; i < users.length; i++) {
+//     subTotal += users[i].age;
+//   }
+
+//   return subTotal / userNumbers;
+// }
+
+// function ageReduce(users) {
+//   return users.reduce((prev, user) => prev + user.age, 0) / users.length;
+// }
+
+// console.log(getAverageAge(arr));
 
 // alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28
 // solution
+
 // Filter unique array members
 // importance: 4
 // Let arr be an array.
@@ -882,12 +953,23 @@
 // For instance:
 
 // function unique(arr) {
-//   /* your code */
+//   let hareArray = new Set(arr);
+//   let outputArray = Array.from(hareArray);
+//   return outputArray;
 // }
 
-// let strings = ["Hare", "Krishna", "Hare", "Krishna",
-//   "Krishna", "Krishna", "Hare", "Hare", ":-O"
+// let strings = [
+//   "Hare",
+//   "Krishna",
+//   "Hare",
+//   "Krishna",
+//   "Krishna",
+//   "Krishna",
+//   "Hare",
+//   "Hare",
+//   ":-O",
 // ];
+// console.log(unique(strings));
 
 // alert( unique(strings) ); // Hare, Krishna, :-O
 // Open a sandbox with tests.
@@ -902,12 +984,20 @@
 // For example:
 
 // let users = [
-//   {id: 'john', name: "John Smith", age: 20},
-//   {id: 'ann', name: "Ann Smith", age: 24},
-//   {id: 'pete', name: "Pete Peterson", age: 31},
+//   { id: "john", name: "John Smith", age: 20 },
+//   { id: "ann", name: "Ann Smith", age: 24 },
+//   { id: "pete", name: "Pete Peterson", age: 31 },
 // ];
 
+// function groupById(objArray) {
+//   let outputObj = {};
+//   objArray.forEach((element) => (outputObj[element.id] = element));
+//   return outputObj;
+// }
+
 // let usersById = groupById(users);
+
+// console.log(usersById);
 
 // /*
 // // after the call we should have:
@@ -942,6 +1032,22 @@
 // Shows each array element using the forEach() method.
 // Remove poor Aramis.
 // Shows each array element using a for-of loop.
+
+// function threeMusketeers() {
+//   let musketeers = ["Athos", "Porthos", "Aramis"];
+//   for (let i = 0; i < musketeers.length; i++) {
+//     console.log(musketeers[i]);
+//   }
+//   musketeers.push("D'Artagnan");
+//   musketeers.forEach((musketeer) => console.log(musketeer));
+//   musketeers = musketeers.filter((m) => m != "Aramis");
+//   for (const musketeer of musketeers) {
+//     console.log(musketeer);
+//   }
+//   return musketeers;
+// }
+// console.log(threeMusketeers());
+
 // Sum of values
 // Write a program that creates the following array, then calculates and shows the sum of its values (42 in that case).
 
@@ -949,6 +1055,28 @@
 // Array maximum
 // Write a program that creates the following array, then calculates and shows the array's maximum value.
 
+// function sumValues() {
+//   const values = [3, 11, 7, 2, 9, 10];
+//   return values.reduce((a, b) => a + b, 0);
+// }
+// console.log(sumValues());
+
 // const values = [3, 11, 7, 2, 9, 10];
 // List of words
-// Write a program that asks the user for a word until the user types "stop". The program then shows each of these words, except "stop".
+// Write a program that asks the user for a word until the user types "stop".
+// The program then shows each of these words, except "stop".
+
+// function wordList() {
+//   let outputArray = [];
+//   let currentWord = "";
+//   while (currentWord !== "stop") {
+//     currentWord = prompt("Type a word to add, or type 'stop'");
+//     if (currentWord !== "stop") {
+//       outputArray.push(currentWord);
+//     }
+//   }
+//   for (let i = 0; i < outputArray.length; i++) {
+//     console.log(outputArray[i]);
+//   }
+// }
+// wordList();
